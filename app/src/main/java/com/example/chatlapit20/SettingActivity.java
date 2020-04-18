@@ -3,7 +3,9 @@ package com.example.chatlapit20;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -41,6 +43,8 @@ public class SettingActivity extends AppCompatActivity {
         changeNamebutton=findViewById(R.id.changeName_Id);
         changeStatusButton=findViewById(R.id.changeStatus_Id);
 
+
+
         databaseReference= FirebaseDatabase.getInstance().getReference().child("Users").child(currert_user);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -63,6 +67,15 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
+changeStatusButton.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        String status_value=description.getText().toString();
 
+        Intent intent=new Intent(SettingActivity.this,StatusActivity.class);
+        intent.putExtra("status_value",status_value);
+        startActivity(intent);
+    }
+});
     }
 }

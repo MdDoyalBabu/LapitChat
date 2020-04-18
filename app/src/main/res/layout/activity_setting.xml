@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#5FE6D9"
     tools:context=".SettingActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -52,7 +53,7 @@
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/changeName_Id"
-        android:text="chang name"
+        android:text="chang Status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
