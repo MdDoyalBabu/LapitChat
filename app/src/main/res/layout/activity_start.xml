@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#221919"
+    tools:context=".StartActivity">
+
+
+    <TextView
+        android:id="@+id/welcome_Id"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:text="@string/welcome_to_lapit_chat_app"
+        android:textColor="#fff"
+        android:textStyle="bold" />
+
+   <Button
+       android:id="@+id/crate_new_account_button"
+       style="@style/Widget.AppCompat.Button.Colored"
+       android:layout_marginTop="40dp"
+       android:layout_below="@id/welcome_Id"
+       android:text="Create new Account?"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"/>
+
+  <Button
+       android:id="@+id/already__account_button"
+       style="@style/Widget.AppCompat.Button.Colored"
+       android:layout_marginTop="20dp"
+       android:layout_below="@id/crate_new_account_button"
+       android:text="Already have an Account"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

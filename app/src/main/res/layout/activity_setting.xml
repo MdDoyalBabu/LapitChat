@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleIamge_status_Id"
+        android:layout_width="wrap_content"
+        android:layout_height="158dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/image" />
+
+
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/display_name_Id"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:text="Display Name"
+        android:layout_below="@id/circleIamge_status_Id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/discription_id"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/display_name_Id"
+        android:textSize="22sp"
+        android:text="hi,there i'm using lapitchat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/changeName_Id"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/discription_id"
+        android:text="chang name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/changeStatus_Id"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/changeName_Id"
+        android:text="chang name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

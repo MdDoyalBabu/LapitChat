@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "992734566588",
+    "firebase_url": "https://chatlapit20.firebaseio.com",
+    "project_id": "chatlapit20",
+    "storage_bucket": "chatlapit20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992734566588:android:fde29b1966d90a4a8c58b9",
+        "android_client_info": {
+          "package_name": "com.example.chatlapit20"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "992734566588-efbpk03pds8ec6h6fltu8mtgtcergai3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chatlapit20",
+            "certificate_hash": "091d880b918a4205dcecbf2ac3925164bcc3ee14"
+          }
+        },
+        {
+          "client_id": "992734566588-faga2k7a5femq2m5r8am4car08qdc7lq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtz6vxlOs4Dxj9YiH9cNP4fQclZ88KLrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "992734566588-faga2k7a5femq2m5r8am4car08qdc7lq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
