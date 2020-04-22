@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -28,15 +29,20 @@ import com.google.firebase.storage.UploadTask;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import java.util.Random;
+import java.util.StringJoiner;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SettingActivity extends AppCompatActivity {
 
+    private static final int MAX_LENGTH = 100;
     private CircleImageView circleImageView;
     private TextView displayName,description;
     private Button changeNamebutton,changeStatusButton;
     private DatabaseReference databaseReference;
     private FirebaseUser mCurrentuser;
+    private ProgressDialog mprogressDialog;
 
     private StorageReference imageStorage;
 
@@ -137,18 +143,31 @@ changeNamebutton.setOnClickListener(new View.OnClickListener() {
 
             if (resultCode == RESULT_OK) {
 
+
+                mprogressDialog=new ProgressDialog(SettingActivity .this);
+                mprogressDialog.setTitle("Uploading image");
+                mprogressDialog.setMessage("Please wait we upload and process image");
+                mprogressDialog.setCanceledOnTouchOutside(false);
+                mprogressDialog.show();
+
+
                 Uri resultUri = result.getUri();
 
-                StorageReference filepath=imageStorage.child("profile_images").child("profile_image.jpg");
+                String current_user_Id=mCurrentuser.getUid();
+
+                StorageReference filepath=imageStorage.child("profile_images").child(random()+".jpg");
 
                 filepath.putFile(resultUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(SettingActivity.this, "Working", Toast.LENGTH_SHORT).show();
+
+                            mprogressDialog.dismiss();
+
                         }
                         else {
-                            Toast.makeText(SettingActivity.this, "Some Error Uploading file", Toast.LENGTH_SHORT).show();
+                            mprogressDialog.hide();
+                            Toast.makeText(SettingActivity.this, ""+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -159,5 +178,16 @@ changeNamebutton.setOnClickListener(new View.OnClickListener() {
             }
         }
 
+    }
+    public static String random() {
+        Random generator = new Random();
+        StringBuilder randomStringBuilder = new StringBuilder();
+        int randomLength = generator.nextInt(MAX_LENGTH);
+        char tempChar;
+        for (int i = 0; i < randomLength; i++){
+            tempChar = (char) (generator.nextInt(96) + 32);
+            randomStringBuilder.append(tempChar);
+        }
+        return randomStringBuilder.toString();
     }
 }

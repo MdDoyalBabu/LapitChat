@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AllUsers">
+
+    <include
+        android:id="@+id/users_page_toolBar"
+        layout="@layout/app_ber_layout" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:paddingHorizontal="10dp"
+        android:layout_below="@id/users_page_toolBar"
+        android:id="@+id/users_recyclerView_Id"
+        android:layout_width="match_parent"
+        android:layout_height="602dp"
+        android:layout_marginTop="10dp" />
+
+
+</RelativeLayout>

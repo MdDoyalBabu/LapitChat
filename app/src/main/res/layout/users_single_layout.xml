@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginTop="20dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+
+        android:id="@+id/users_circleimageView_Id"
+        android:layout_width="98dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/image" />
+
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/users_display_name_Id"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/users_circleimageView_Id"
+        android:layout_toRightOf="@+id/users_circleimageView_Id"
+        android:text="Display Name "
+        android:textColor="#000"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/default_users_status_Id"
+        android:layout_below="@id/users_display_name_Id"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/users_circleimageView_Id"
+        android:layout_toRightOf="@+id/users_circleimageView_Id"
+        android:text="default your status "
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ProfileActivity">
+
+<RelativeLayout
+    android:background="#C6000000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:id="@+id/image_view_Id"
+        android:src="@drawable/doyal1"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"/>
+
+    <TextView
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/image_view_Id"
+        android:id="@+id/profile_display_Id"
+        android:text="Display name"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:textSize="20sp"
+        android:layout_marginTop="17dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/profile_display_Id"
+        android:id="@+id/current_UserStatus_id"
+        android:textColor="#fff"
+        android:text="Current User Status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:id="@+id/total_friend_Id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/current_UserStatus_id"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="105dp"
+        android:text="Total Friends"
+        android:textColor="#fff"
+        android:textSize="17sp" />
+
+    <Button
+        android:id="@+id/sendFriendRequest_Id"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/current_UserStatus_id"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+        android:text="send friend request" />
+
+
+</RelativeLayout>
+
+
+
+</ScrollView>

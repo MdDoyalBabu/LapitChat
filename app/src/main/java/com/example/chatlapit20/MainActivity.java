@@ -98,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
 
         }
+        if (item.getItemId()==R.id.users_menu_id){
+            Intent intent=new Intent(MainActivity.this,AllUsers.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
 
 
