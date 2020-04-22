@@ -15,7 +15,7 @@
         android:layout_height="65dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="15dp"
-        android:src="@drawable/image" />
+        android:src="@drawable/doyal1" />
 
 
     <TextView
