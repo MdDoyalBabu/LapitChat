@@ -14,9 +14,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -25,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginInButtond;
     private FirebaseAuth mAuth;
     private ProgressDialog loginprogressDialog;
+    private DatabaseReference mUserDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Login Account");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        mUserDatabase= FirebaseDatabase.getInstance().getReference().child("Users");
         mAuth = FirebaseAuth.getInstance();
         emailEdittext=findViewById(R.id.login_passwordl_Edittext_Id);
         nameEdittext=findViewById(R.id.login_email_Id);
@@ -74,10 +80,22 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if (task.isSuccessful()){
+
                     loginprogressDialog.dismiss();
-                    Intent intent=new Intent(LoginActivity.this,MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
+
+                    String current_Id=mAuth.getCurrentUser().getUid();
+                    String deviceToken= FirebaseInstanceId.getInstance().getToken();
+
+                    mUserDatabase.child(current_Id).child("deviceToken").setValue(deviceToken).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
+                        }
+                    });
+
+
                 }
                 else {
                     loginprogressDialog.hide();
